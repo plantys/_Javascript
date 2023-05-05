@@ -1,3 +1,39 @@
+//tbd-----------------------------------------------------
+find()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
+findIndex()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
+filter()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+reduce()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce?v=b
+concat()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat?v=b
+slice()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
+splice()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+//map-----------------------------------------------------
+const csvData = [
+  'John,Doe,30',
+  'Jane,Smith,28',
+  'Alice,Johnson,25',
+];
+const peopleData = csvData.map((line) => {
+  const [firstName, lastName, age] = line.split(',');
+  return { firstName, lastName, age: Number(age) };
+});
+console.log(peopleData);// Output: [//   { firstName: 'John', lastName: 'Doe', age: 30 },
+//map-----------------------------------------------------
+const numbers2 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const evenSquares = numbers2.map((num) => (num % 2 === 0 ? num * num : null)).filter((num) => num !== null);
+console.log(evenSquares); // Output: [ 4, 16, 36, 64 ]
+//map-----------------------------------------------------
+const people = [
+  { firstName: 'John', lastName: 'Doe' },
+  { firstName: 'Jane', lastName: 'Smith' },
+  { firstName: 'Alice', lastName: 'Johnson' },
+];
+const fullNames = people.map(({ firstName, lastName }) => `${firstName} ${lastName}`);
+console.log(fullNames); // Output: [ 'John Doe', 'Jane Smith', 'Alice Johnson' ]
+
+// Destructuring simple------------------------------------------
+const myObj = {name: 'Max', age: 28 }
+const printName = ({name}) => {console.log(name); }
+  printName(myObj);
 // Destructuring with nested objects and default values------------------------------------------------------------
 const person1 = {
   name: 'John',
@@ -9,8 +45,6 @@ const person1 = {
   },
   hobbies: ['reading', 'movies'],
 };
-
-
 const {
   name,
   age,
